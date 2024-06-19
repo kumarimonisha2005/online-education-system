@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<title>Login SignUp</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- It will redirect to the Home Page after submitting the form -->
+  <script>
+  $(document).ready(function(){
+    $("form").submit(function(){
+      alert("Great Job !");
+    });
+  });
+  </script>
+</head>
+<body>
+		<div class="form-box">
+			<div class="button-box">
+				<div id="btn"></div>
+				<button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #fff;">Log In</button>
+				<button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+			</div>
+			<div class="social-icons">
+				<img src="data:image/png;base64,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">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/768px-Instagram-Icon.png">
+				<img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png">
+			</div>
+			
+			<!-- Login Form -->
+			<form id="login" class="input-group" action="index.html">
+				<div class="inp">
+					<img src="https://i.pinimg.com/originals/c6/29/0c/c6290cbd497e76e536931568aefd8b60.png"><input type="text" id="email" class="input-field" placeholder="Username or Phone Number" style="width: 88%; border:none;" required="required">
+				</div>
+				<div class="inp">
+					<img src="data:image/png;base64,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"><input type="password" id="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required">
+				</div>
+				<input type="checkbox" class="check-box">Remember Password
+				<button type="submit" class="submit-btn">Log In</button>
+			</form>
+
+
+			<div class="other" id="other">
+				<div class="instead">
+					<h3>or</h3>
+				</div>
+				<button class="connect" onclick="google()">
+					<img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"><span>Sign in with Google</span>
+				</button>
+			</div>
+			
+			<!-- Registration Form -->
+			<form id="register" class="input-group">
+				<input type="text" class="input-field" placeholder="Full Name" required="required">
+				<input type="email" class="input-field" placeholder="Email Address" required="required">
+				<input type="password" class="input-field" placeholder="Create Password" name="psame" required="required">
+				<input type="password" class="input-field" placeholder="Confirm Password" name="psame" required="required">
+				<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
+				<button type="submit" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+			</form>
+		</div>
+		<script type="text/javascript" src="style.js"></script>
+</body>
+</html>

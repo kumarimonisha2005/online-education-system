@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="../images/icon/favicon.png">
+	<title>Quiz on LearnEd</title>
+	<link rel="stylesheet" type="text/css" href="quizStyle.css">
+	<script type="text/javascript" src="../style.js"></script>
+</head>
+<body>
+	
+<!-- NAVIGATION -->
+	<header>
+		<div class="nav" id="nav">
+			<div id="learned-logo">
+			<a href="../index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEX///8CAgKHh4dERETo6Oh9fX2Dg4P5+flVVVWqqqrw8PDu7u729vYYGBi0tLSxsbE9PT3f39+ioqLHx8eNjY0wMDCUlJQQEBBoaGja2tptbW0cHBzBwcF3d3fS0tJJSUklJSVQUFAvLy+bm5taWlo3NzdpaWldz9JPAAAECklEQVR4nO2dDVPiQAyGDS0Ui6KAiF+HgHL//yeejDNnT9w220026dz7/IBOnrm5tW8aNhcXAAAAAAAAAAAAAACA4THfE9H+xroMNcqCPikW1qXosN3QX1bWxWhwQ00urcuR547+ZWRdkDDVA33nobIuSpL69kyQ6FhblyXH4w9+J7bWhUkxDwgSza1Lk+E+KEh0Z12cBE8tgkRP1uUlUxetgh/vNzPrEtNYPHcIEj0/WheZwqrT78SLdZn9WbIEid6sC+3LmClI9Mu61F5UU7bgR2a8si43nvIQIUh0KK0LjoV3xjQZWGS86TY6Y1DNjVEPQaKJddl83nsJEk2tC2dSrnsKDuW82V73FiTaDCAyhsMgD/eR8XvDKR7fkbFqD4M8nhy3qOpXAUHPkXEh4nfCadf/RUzQaWR8ExR0GRn5YZCHt8h4tRcWJHp1FRkXO3FBomdH5018GOThJjJeKgm6+coofcY0GVvLXUQ2nOKZmr/ClUdVQaKjcWTcKvudMI2MqWGQh2FkTA+DPMwi4/n0gRYPJn619hnTZG0w1fC46a5LkuxfGSXDII/M503b9IEW9zkFJRpO8eSbaqj3JoIfkTHTeVOmNLXTuM4SGbXCII8MkZE7faDFUltQMwzy0I2MymGQh2ZkLDUaTvHs1CKj7RnTROm86TN9oIXKVEO/6QMtFAbhPZwxTaSnGsqfRtFtuRU9b5KmD7S4FmxR5Wk4xSMWGS3CIA+hyGgTBnlIRMarrlF0W4rkr4xy0wdaJEbGMnNHrQ9pXTh/fwbPOaRkjfw9wz6kfEeVmXHSZpdgaF07Exj+14aeX2e+2CcYhn7e6oukMb98H0H785oi6C/an3NMfTP1G50+Gad3T+vLyRcj+6RRjBrlLOVbp7nGL8JoD2bY9xS1L9SAIQxhCEMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxhCEMYwhCGMIQhDGEIQxjCcMCG08m4k8jbv10Zjnl3kdSToRryf60Tc/OiI8OYC7oiJuYdGcb8ai7iZ46ODKOe271TyJ/hbdRz+RPyfgyLqOfCEIZywBCGIWAIQzlgCMMQMIShHDCEYQgYwlAOGMIwBAxhKAcMYRgChjCUA4YwDOHHkH9P1FAN+RtjtQy1VwbxV5RoGWovKeHfSqtlqL3ZamZuqL7xkb1PTslwp2LVhH2YKhlqH6URsz1Khhl2Wv0yNcyxe4171ugYZtksy/yfqGKYaSMpb5BQw/Bdyeg7Feu2fQXD5At12cw4t9HLGxYzJZ+fYFz0LW74W8klwPyQ2XCnsqarjWrZsSFJ1HCztNixXq1Gbbv01lEPW7f9841WhjvkyyBxx8Is/CClygEAAAAAAAAAAAAAkOUP1vhd/079jwIAAAAASUVORK5CYII="height = "50" style="width: 120px;"></a></div>
+			<div class="switch-tab" id="switch-tab" onclick="switchTAB()"><img src="https://cdn-icons-png.flaticon.com/512/151/151409.png"></div>
+			<ul id="list-switch">
+				<li><a href="jee.html"><img src="https://img.collegepravesh.com/2015/09/NTA-Logo.png" class="icon">JEE</a></li>
+				<li><a href="computer_courses.html"><img src="https://cdn-icons-png.flaticon.com/512/1754/1754435.png" class="icon">Computer Courses</a></li>
+				<li><a href="computer_courses.html#data"><img src="data:image/png;base64,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" class="icon">Data Structures</a></li>
+				<li><a href="computer_courses.html#algo"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLhj9J6hXCz8MzZJiOtnkbV5-h182WXxAcQ&usqp=CAU" class="icon">Algorithm</a></li>
+				<li><a href="computer_courses.html#projects"><img src="https://cdn-icons-png.flaticon.com/512/5956/5956592.png" class="icon">Projects</a></li>
+			</ul>
+			<div class="search" id="search-switch">
+				<input type="search" placeholder="Search" class="srch"><button id="srchbtn"><img src="../images/icon/search.png"></button>
+			</div>
+		</div>
+	</header>
+	
+
+<!-- MAIN Heading of Page -->
+	<div class="title" id="title">
+		<span>Daily Quiz on LearnEd</span>
+		<div class="shortdesc"><br>
+			<p>If you think education is expensive, try ignorance</p>
+		</div>
+		<button onclick="startquiz()">Start Now</button>
+	</div>
+
+
+<div class="panel" id="panel">
+	
+	<div class="left-side" id="left">
+		<ul>
+			<li onclick="quizt(1)">HOME</li>
+			<li onclick="quizt(2)">JEE Mains</li>
+			<li onclick="quizt(3)">JEE Advanced</li>
+			<li onclick="quizt(5)">C/C++</li>
+			<li onclick="quizt(6)">Java</li>
+			<li onclick="quizt(7)">Python</li>
+			<li onclick="quizt(8)">JavaScript</li>
+			<li onclick="quizt(9)">Data Structures</li>
+			<li onclick="quizt(10)">Algorithm</li>
+			<li onclick="quizt(11)">Interview Questions</li>
+		</ul>
+	</div>
+
+	<div class="right-side" id="right">
+		<div id="quiz-container">
+			
+			<div id="f1"><div class="quiz-frame main-frame"></div></div>
+
+			<div id="f2"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe3hXLPuiQGqj1n3IeeAzM8YLNpgJIIk_zfteoEdWka4X3wxQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f3"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSeVTLsd_AqZGpbIMnZRm20OKrjjiYSirWBjfCHpWtAsMQU--g/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f4"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdjSKZhQp5jqqR34zD_uWMtgXr18F9pdK6YqcafLSP6J7VZjw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f5"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe1xs1-41MAbLN7KkXrJwtGdbl5ydxe_vX_nmFRjf6c0wtYkA/viewform?embedded=true"  frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></iframe></div>
+			
+			<div id="f6"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdHFDm_BakVxro_zJI78OF2OLJpXgDzzaAVMHD9hptWlXBSpA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f7"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdgD7yFEJtqpkImDiLAaQ7w9VcsO688gr1V3Gl7FqwM5yXtWQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f8"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSchDBnai_Aup7YFJQegg4z-qoB338p010VgZRxBYDT17xoRew/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f9"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSfY5oIAz4R9Ty-LBpx7h4th6OJ0-RkrxIlLslRV4NjwwW8_uw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+			
+			<div id="f10"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSflwS89sG7H98J9vFgFqJgsKaZ5gpq3yUlOiW3up7RQQ-qRnw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+
+			<div id="f11"><iframe class="quiz-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSe_aS8-CMNFdUzI1UE73zahC2bmMwJkmB6FJXPIeKbLIBqB4Q/viewform?embedded=true" frameborder="0" marginheiclass="quiz-frame" ght="0" marginwidth="0">Loading…</iframe></div>
+
+		</div>
+	</div>
+
+</div>
+
+	<script type="text/javascript" src="../style.js"></script>
+</body>
+</html>
